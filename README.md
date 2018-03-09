@@ -55,6 +55,34 @@ $ ./upgrade_odoo
 ```
 - odoo se lanza en el puerto 9069 (se pude configurar en otro)
 
+## Instalación py3o.fusion
+Creamos un directorio donde descargaremos el contendor de docker
+```
+$ cd /opt
+$ sudo mkdir docker/py3o
+$ sudo chown -R $(whoami):$(whoami) docker
+$ cd docker/py3o
+```
+Instalamos docker con un usuario no root
+```
+$ wget -qO- https://get.docker.com/ | sh
+$ sudo usermod -aG docker $(whoami)
+$ exit
+```
+Volvemos a hacer login para que nuetsro usuario ya tenga el grupo de docker cargado y continuamos
+```
+$ sudo pip install docker-compose
+$ cd /opt/docker/py3o
+$ wget https://bitbucket.org/xcgd/py3o.fusion/raw/76dcb04477c4ddcaa303db94ae340561c2da75a9/docker-compose.yml
+$ docker-compose up
+```
+Esto nos arrancará un servicio en http://localhost:8765.
+Para que se arranque de forma automática con el sistema y en modo daemon
+```
+$ crontab -e
+@reboot (sleep 30s ; cd /opt/docker/py3o/ ; /usr/local/bin/docker-compose up -d)&
+```
+
 ## Securizar el acceso al supervisor
 ```
 $ sudo apt-get install iptables

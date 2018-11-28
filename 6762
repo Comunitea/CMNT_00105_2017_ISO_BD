@@ -1,1 +1,0 @@
-select c.name, b.name, b.activity from iso_iso_lopd_project_project a inner join res_partner b on b.id = a.partner_id inner join iso_cnae_cnae c on b.cnae_id = c.id where a.id

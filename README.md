@@ -24,9 +24,12 @@ $ sudo apt-key adv --keyserver hkp://subkeys.pgp.net --recv-keys 0xE38CEB07
 $ sudo apt-get update
 $ sudo apt-get install openerp-server-system-build-deps
 ```
-- Para poder compilar e instalar postgres
+- Para poder compilar e instalar postgres y otros paquetes
 ```
 $ sudo apt-get install libreadline-dev
+$ sudo apt-get install freetds-dev
+$ sudo apt-get install libcups2-dev
+$ sudo apt-get install libssl-dev
 ```
 - Crear un virtualenv dentro de la carpeta del respositorio. Esto podría ser opcional, obligatorio para desarrollo o servidor de pruebas, tal vez podríamos no hacerlo para un despliegue en producción. Si no está instalado, instalar el paquete de virtualenv. Es necesario tener la versión que se instala con easy_install o con pip, desinstalar el paquete python-virtualenv si fuera necesario e instalarlo con easy_install
 ```

@@ -1,0 +1,13 @@
+diff --git a/sale_commission/models/settlement.py b/sale_commission/models/settlement.py
+index 8547fc0..4accade 100644
+--- a/sale_commission/models/settlement.py
++++ b/sale_commission/models/settlement.py
+@@ -37,7 +37,7 @@ class Settlement(models.Model):
+     company_id = fields.Many2one(
+         comodel_name='res.company',
+         default=lambda self: self.env.user.company_id,
+-        required=True
++        required=False
+     )
+ 
+     @api.depends('lines', 'lines.settled_amount')

@@ -1,0 +1,13 @@
+diff --git a/document_page/__manifest__.py b/document_page/__manifest__.py
+index 3db1ee7..7639f90 100644
+--- a/document_page/__manifest__.py
++++ b/document_page/__manifest__.py
+@@ -31,7 +31,7 @@
+         'views/document_page_assets.xml',
+         'views/report_document_page.xml',
+         'security/document_page_security.xml',
+-        'security/ir.model.access.csv',
++        #'security/ir.model.access.csv',
+     ],
+     'demo': [
+         'demo/document_page.xml'
